@@ -7,7 +7,9 @@ Eles estão em um estágio onde o MVP (Minimum Viable Program) será apresentado
 Precisamos estruturar o nosso ambiente AWS, vamos criar usando [Terraform](https://www.terraform.io/):
 
 1. Uma [VPC](https://aws.amazon.com/pt/vpc/) usando um [endereçamento de rede privada](https://www.rfc-editor.org/rfc/rfc1918)
-1.1. Dentro da VPC, você deve criar 2 subnets privadas (com acesso a intenet) e 2 subnets publicas, [referencia](https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/VPC_Scenario2.html)
+
+Dentro da VPC, você deve criar 2 subnets privadas (com acesso a intenet) e 2 subnets publicas, [referencia](https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/VPC_Scenario2.html)
+
 2. Um [security group](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/ec2-security-groups.html) que permita acesso de entrarda (inbound) de qualquer lugar do mundo nas portas 80 e 443 e acesso de saida para qualquer lugar do mundo (sem restricões). Também permitir acesso na porta 22 para o mesmo range de ip usado na VPC.
 3. Uma [máquina virtual](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/concepts.html) onde rodará a nossa aplicação de teste, ela deve ser do tamanho t4g.micro
 4. Também precisaremos de um [S3 bucket](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), privado
